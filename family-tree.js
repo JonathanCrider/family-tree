@@ -52,7 +52,20 @@ class FamilyTree {
   }
 }
 
+let node;
+
 button.addEventListener("click", function(){
+  if(!node){
+    node = new FamilyTree(newName.value)
+    document.getElementById('h1').hidden = false;
+    genOne.innerHTML = `<li>${node.value}</li>`;
+  }
+
+  else{
+    node.insert(newName.value);
+    document.getElementById('h2').hidden = false;
+    genTwo.innerHTML = `<li>${node.children[0]['value']}</li>`;
+  }
 
 
 });
