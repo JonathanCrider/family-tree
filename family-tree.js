@@ -1,4 +1,12 @@
 
+const newName = document.getElementById('name');
+const newAge = document.getElementById('age');
+const button = document.querySelector('button');
+
+const genOne = document.getElementById('g1');
+const genTwo = document.getElementById('g2');
+const genThree = document.getElementById('g3');
+
 class FamilyTree {
   constructor(name) {
     if (typeof name !== 'string') {
@@ -43,5 +51,10 @@ class FamilyTree {
     this.children.push(child);
   }
 }
+
+button.addEventListener("click", function(){
+
+
+});
 
 module.exports = FamilyTree;
