@@ -1,4 +1,3 @@
-
 const newName = document.getElementById('name');
 const newAge = document.getElementById('age');
 const button = document.querySelector('button');
@@ -22,7 +21,7 @@ class FamilyTree {
 
   findMember(name) {
     let child = undefined;
-    this.children.forEach(obj => {
+    this.children.forEach((obj) => {
       if (obj.value === name) {
         child = obj;
       }
@@ -36,10 +35,10 @@ class FamilyTree {
       if (obj.children.length === 0) {
         return string;
       } else {
-        level += '--'
-        obj.children.forEach(child => {
-          string += `${members(child, level)}`
-        })
+        level += '--';
+        obj.children.forEach((child) => {
+          string += `${members(child, level)}`;
+        });
         return string;
       }
     }
@@ -54,20 +53,22 @@ class FamilyTree {
 
 let node;
 
-button.addEventListener("click", function(){
-  if(!node){
-    node = new FamilyTree(newName.value)
-    document.getElementById('h1').hidden = false;
-    genOne.innerHTML = `<li>${node.value}</li>`;
-  }
+function test(id) {
+  alert(id);
+}
 
-  else{
+button.addEventListener('click', function () {
+  if (!node) {
+    node = new FamilyTree(newName.value);
+    document.getElementById('h1').hidden = false;
+    genOne.innerHTML = `<li onclick="test('h1')">${node.value}</li>`;
+  } else {
     node.insert(newName.value);
     document.getElementById('h2').hidden = false;
-    genTwo.innerHTML = `<li>${node.children[0]['value']}</li>`;
+    genTwo.innerHTML += `<li onclick="test('h2')">${
+      node.children[node.familySize() - 2]['value']
+    }</li>`;
   }
-
-
 });
 
 module.exports = FamilyTree;
