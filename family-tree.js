@@ -62,12 +62,14 @@ button.addEventListener('click', function () {
     node = new FamilyTree(newName.value);
     document.getElementById('h1').hidden = false;
     genOne.innerHTML = `<li onclick="test('h1')">${node.value}</li>`;
+    newName.value = '';
   } else {
     node.insert(newName.value);
     document.getElementById('h2').hidden = false;
     genTwo.innerHTML += `<li onclick="test('h2')">${
       node.children[node.familySize() - 2]['value']
     }</li>`;
+    newName.value = '';
   }
 });
 
