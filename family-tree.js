@@ -71,4 +71,16 @@ button.addEventListener('click', function () {
   }
 });
 
+newName.addEventListener('keyup', function (e) {
+  if (e.code === 'Enter') {
+    button.click();
+  }
+});
+
+newAge.addEventListener('keyup', function (e) {
+  if (e.code === 'Enter') {
+    button.click();
+  }
+});
+
 module.exports = FamilyTree;
