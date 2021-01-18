@@ -66,9 +66,7 @@ button.addEventListener('click', function () {
   } else {
     node.insert(newName.value);
     document.getElementById('h2').hidden = false;
-    genTwo.innerHTML += `<li onclick="test('h2')">${
-      node.children[node.familySize() - 2]['value']
-    }</li>`;
+    genTwo.innerHTML += `<li onclick="test('h2')">${node.children[node.familySize() - 2]['value']}</li>`;
     newName.value = '';
   }
 });
